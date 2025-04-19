@@ -1,6 +1,4 @@
-# 🏍️ Bike Servicing Management API
-
-## 🌟 Live Demo
+# 🏍️ Bike Servicing Management API Name CycleCenterHub
 
 **Backend URL:**
 
@@ -100,56 +98,6 @@
    yarn build
    ```
 
-## 🔍 API Usage Examples
-
-### Create a Customer
-
-```bash
-curl -X POST http://localhost:5000/api/customers \
-  -H "Content-Type: application/json" \
-  -d '{
-    "name": "John Doe",
-    "email": "john.doe@example.com",
-    "phone": "123-456-7890"
-  }'
-```
-
-### Add a Bike
-
-```bash
-curl -X POST http://localhost:5000/api/bikes \
-  -H "Content-Type: application/json" \
-  -d '{
-    "brand": "Yamaha",
-    "model": "R15",
-    "year": 2022,
-    "customerId": "87b3d7e1-8d9a-4f51-bf01-6f1e92f0f194"
-  }'
-```
-
-### Create a Service Record
-
-```bash
-curl -X POST http://localhost:5000/api/services \
-  -H "Content-Type: application/json" \
-  -d '{
-    "bikeId": "f3f1b192-3e62-402e-9bd3-d351a5a10e92",
-    "serviceDate": "2025-04-11T10:00:00.000Z",
-    "description": "Oil change",
-    "status": "pending"
-  }'
-```
-
-### Mark a Service as Completed
-
-```bash
-curl -X PUT http://localhost:5000/api/services/a1e4a182-c80d-4ff7-9a3d-873929f9d0e6/complete \
-  -H "Content-Type: application/json" \
-  -d '{
-    "completionDate": "2025-04-11T15:30:00.000Z"
-  }'
-```
-
 ## 📊 Database Schema
 
 ### Customer Table
@@ -196,19 +144,11 @@ The API implements standardized error responses:
 }
 ```
 
-## 🧪 Running Tests
-
-```bash
-npm test
-# or
-yarn test
-```
-
 ## 👨‍💻 Authors
 
 - Your Name - [GitHub Profile](https://github.com/Emtiaz-ahmed-13)
 
-## 🙏 Acknowledgements
+## Acknowledgements
 
 - Express.js Documentation
 - Prisma Documentation
