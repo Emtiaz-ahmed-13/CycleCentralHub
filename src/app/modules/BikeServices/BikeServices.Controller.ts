@@ -44,7 +44,6 @@ const GetSingleService = catchAsync(async (req, res) => {
   });
 });
 const UpdateServiceRecord = catchAsync(async (req, res) => {
-  // console.log(req.params.status);
   const { id, status } = req.params;
   const result = await BikeServices.UpdateServiceRecord(id, status as STATUS);
   sendResponse(res, {

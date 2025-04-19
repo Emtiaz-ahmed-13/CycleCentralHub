@@ -6,7 +6,7 @@ import { TCreateServiceRecord } from "./BikeServices.Interface";
 
 const CreateServiceInDB = async (payload: TCreateServiceRecord) => {
   console.log(payload);
-  // Checking is customer exists or not
+
   const isCustomerExists = await prisma.bike.findUnique({
     where: {
       bikeId: payload.bikeId,
@@ -37,7 +37,6 @@ const GetAllServiceFromDB = async () => {
   return result;
 };
 const GetPendingServicesFromDB = async () => {
-  console.log("hitting");
   const sevenDaysBeforeDateFromToday = new Date();
   sevenDaysBeforeDateFromToday.setDate(
     sevenDaysBeforeDateFromToday.getDate() - 7

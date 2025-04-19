@@ -1,0 +1,12 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.ServiceRoutes = void 0;
+const express_1 = require("express");
+const BikeServices_Controller_1 = require("./BikeServices.Controller");
+const router = (0, express_1.Router)();
+router.post("/", BikeServices_Controller_1.BikesControllers.CreateNewService);
+router.get("/", BikeServices_Controller_1.BikesControllers.GetAllServices);
+router.get("/status", BikeServices_Controller_1.BikesControllers.GetPendingServices);
+router.get("/:id", BikeServices_Controller_1.BikesControllers.GetSingleService);
+router.put("/:id/:status", BikeServices_Controller_1.BikesControllers.UpdateServiceRecord);
+exports.ServiceRoutes = router;
