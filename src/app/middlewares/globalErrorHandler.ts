@@ -6,7 +6,11 @@ export const GlobalErrorHandler: ErrorRequestHandler = (
   res,
   next
 ) => {
-  const { statusCode = 500, message = "Something went wrong", stack } = err;
+  console.error("Error caught by GlobalErrorHandler:", err);
+
+  const statusCode = err?.statusCode || 500;
+  const message = err?.message || "Something went wrong";
+  const stack = err?.stack;
 
   res.status(statusCode).json({
     success: false,

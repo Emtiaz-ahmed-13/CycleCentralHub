@@ -2,7 +2,10 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.GlobalErrorHandler = void 0;
 const GlobalErrorHandler = (err, req, res, next) => {
-    const { statusCode = 500, message = "Something went wrong", stack } = err;
+    console.error("Error caught by GlobalErrorHandler:", err);
+    const statusCode = err?.statusCode || 500;
+    const message = err?.message || "Something went wrong";
+    const stack = err?.stack;
     res.status(statusCode).json({
         success: false,
         message,
